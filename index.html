@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web chat app</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+    
+
+    <header class="header">
+        <div class="nav-tools"></div>
+    </header>
+
+    <main class="main">
+
+        <div class="other-chats"></div>
+
+
+       <div class="field">
+        <div class="messages" id="message-field">
+
+        </div>
+        <div class="message-enter">
+            <p class="error" style="z-index: 1; padding-bottom:20px; color:red; display:none;" id="error">Write message first</p>
+            <input type="text" name="" id="textmessage" class="message" placeholder="Write message here...">
+            <span class="material-symbols-outlined send-btn" onclick="SendFunction()">
+                send
+                </span>
+        </div>
+       </div>
+    </main>
+
+
+    <script>
+        function SendFunction() {
+            const work = document.createTextNode(document.getElementById("textmessage").value);
+            const table = document.getElementById("message-field");
+            const card = document.createElement("p");
+            card.className = "message-box";
+            if(document.getElementById("textmessage").value == ""){
+                document.getElementById("error").style.display = "block";
+            }else{
+                card.appendChild(work);
+                table.appendChild(card);
+                document.getElementById("textmessage").value = "";
+                document.getElementById("error").style.display = "none";
+
+            }
+
+            
+          }
+    </script>
+</body>
+
+
+</html>
