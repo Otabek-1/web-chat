@@ -1,0 +1,15 @@
+@media(max-width:412px){
+    .other-chats{
+        width: 0;
+    }
+    .message{
+        width: 100%;
+    }
+    .send-btn{
+        right: 10px;
+    }
+    .message-box{
+        max-width: 250px;
+        width: 100%;
+    }
+}
